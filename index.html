@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IWA window.open tests</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 1em;
+      }
+      button {
+        margin-bottom: 0.5em;
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      h1,
+      h2 {
+        margin-bottom: 0.5em;
+      }
+      p {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>IWA window.open() tests</h1>
+
+    <h2>Anchor Link</h2>
+    <a href="https://google.com" target="_self">Link (_self)</a>
+    <a href="https://google.com" target="_blank">Link (_blank, implicit opener)</a>
+    <a href="https://google.com" target="_blank" rel="noopener">Link (_blank, noopener)</a>
+    <a href="https://google.com" target="_blank" rel="opener">Link (_blank, opener)</a>
+
+    <h2><code>window.open()</code> Buttons</h2>
+    <button id="open-blank">
+      window.open('https://example.com', '_blank')
+    </button>
+    <button id="open-blank-5x">
+      window.open('https://example.com', '_blank') (x5)
+    </button>
+    <br />
+    <button id="open-self">
+      window.open('https://example.com', '_self')
+    </button>
+    <button id="open-self-5x">
+      window.open('https://example.com', '_self') (x5)
+    </button>
+    <br />
+    <button id="open-basic">
+      window.open('https://example.com')
+    </button>
+    <button id="open-basic-5x">
+      window.open('https://example.com') (x5)
+    </button>
+    <br />
+    <button id="open-blank-noopener">
+      window.open('https://example.com', '_blank', 'noopener')
+    </button>
+    <button id="open-blank-noopener-5x">
+      window.open('https://example.com', '_blank', 'noopener') (x5)
+    </button>
+    <br />
+    <button id="open-blank-noreferrer">
+      window.open('https://example.com', '_blank', 'noreferrer')
+    </button>
+    <button id="open-blank-noreferrer-5x">
+      window.open('https://example.com', '_blank', 'noreferrer') (x5)
+    </button>
+    <br />
+    <button id="open-named">
+      window.open('https://example.com', 'myWindow')
+    </button>
+    <button id="open-named-5x">
+      window.open('https://example.com', 'myWindow') (x5)
+    </button>
+    <br />
+    <button id="open-features">
+      window.open('https://example.com', '_blank', 'width=400,height=400')
+    </button>
+    <button id="open-features-5x">
+      window.open('https://example.com', '_blank', 'width=400,height=400') (x5)
+    </button>
+    <br />
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "id": "/",
+  "short_name": "IWA",
+  "name": "Basic window.open IWA Example",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "icons": [
+    {
+      "src": "/images/icon.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["borderless"],
+  "scope": "/",
+  "permissions_policy": {
+    "window-management": ["self"]
+  }
+}
