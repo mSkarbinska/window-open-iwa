@@ -68,3 +68,13 @@ document.getElementById('open-features-5x')?.addEventListener('click', () => {
     window.open('https://example.com', '_blank', 'width=400,height=400');
   }
 });
+
+document
+  .getElementById('focus-main-window-after-3s')
+  ?.addEventListener('click', () => {
+    console.log('Will request focus for this window in 3 seconds...');
+    setTimeout(() => {
+      window.focus();
+      console.log('Focus requested for this window.');
+    }, 3000);
+  });
