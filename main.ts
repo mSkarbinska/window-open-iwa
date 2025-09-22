@@ -1,3 +1,28 @@
+import { SsoOffloadingConnector, createSsoOffloadingConnector } from "sso-offloading-connector";
+
+const ssoCf = document.getElementById('ssoCf') as HTMLIFrameElement;
+let ssoConnector: SsoOffloadingConnector | null = null;
+
+
+document.getElementById('sso-start')?.addEventListener('click', (event) => {
+  if(ssoConnector){
+    ssoConnector.start().catch(e=>console.log(e))
+    return
+  } 
+  ssoConnector = createSsoOffloadingConnector(
+    ssoCf as any,
+    {
+      urls: ["https://accounts.google.com/o/oauth2/v2*"],
+    },
+    (e)=>{console.log(e)}
+  );
+    ssoConnector.start().catch(e=>console.log(e))
+});
+
+document.getElementById('sso-stop')?.addEventListener('click', (event) => {
+   ssoConnector?.stop()
+});
+
 document.getElementById('open-blank')?.addEventListener('click', () => {
   window.open('https://example.com', '_blank');
 });
