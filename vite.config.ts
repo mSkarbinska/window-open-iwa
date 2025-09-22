@@ -74,13 +74,5 @@ export default defineConfig({
         main: './index.html',
       },
     },
-  },
-  resolve: {
-        alias: {
-          'sso-offloading-connector': path.resolve(
-            __dirname,
-            '../../packages/sso-offloading-connector/src/index.ts' 
-          ),
-        },
   }
 });
